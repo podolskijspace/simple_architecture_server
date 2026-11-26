@@ -1,7 +1,7 @@
 const express = require('express');
 var cors = require('cors');
 const app = express()
-const port = 3000
+const port = Number(process.env.PORT || 3000);
 
 app.use(cors());
 
@@ -92,4 +92,4 @@ app.get('/shows', async (req, res) => {
     }
 });
 
-app.listen(port)
+app.listen(port, '0.0.0.0');
