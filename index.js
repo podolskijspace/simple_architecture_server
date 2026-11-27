@@ -4,7 +4,10 @@ const app = express()
 const port = Number(process.env.PORT || 3000);
 const host = process.env.LISTEN_HOST || '0.0.0.0';
 
-app.use(cors());
+app.use(cors({
+    origin: "https://podolskijspace.github.io",
+    credentials: true,
+}));
 
 const cache = new Map();
 
